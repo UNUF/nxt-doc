@@ -50,7 +50,7 @@ The _Arguments_ column gives you the number of arguments or the specific argumen
 | `fill`              | 1                                                                                        | `T0_T1_K0_X3_X5` |        |             |
 | `finddir`           | 5                                                                                        | `_________X3_X5` |        |             |
 | `findfile`          | 2                                                                                        | `_________X3_X5` |        |             |
-| `fstr`              | 3                                                                                        | `T0_T1_K0______` | hidden |             |
+| `fstr`              | 3: `input_int, digits_before_point, digits_after_point`                                  | `T0_T1_K0______` | hidden | Converts an integer to a sort of float-string by copying the specified number upper most digits before the decimal point and the specified number of lower digits after the decimal point (and dropping digits inbetween). Writes result to the topmost component (use f.ex. `ref x` plus `doevents` to bring the desired component to the top). |
 | `get`               | 7                                                                                        | `T0_T1_K0_X3_X5` |        |             |
 | `getpassw`          | 0                                                                                        | `T0_T1_K0_X3_X5` | hidden |             |
 | `i`                 | 4                                                                                        | `T0_T1_K0_X3_X5` | hidden |             |
