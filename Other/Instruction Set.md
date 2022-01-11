@@ -105,3 +105,12 @@ Additionally it's marked whether the official [Nextion Instruction](https://next
 | `xpic`              | 7         | `T0 T1 K0 X3 X5` |        |
 | `xstr`              | 11        | `T0 T1 K0 X3 X5` |        |
 | `zstr`              | 5         | `T0 T1 K0 X3 X5` | Y      |
+
+## Unlisted Instruction Details
+
+
+| Instruction | Var 1 | Var 2 | Var 3      | Var 4       | Var 5   | Var 6   | Var 7 |
+| ----------- | ----- | ----- | ---------- | ----------- | ------- | ------- | ----- |
+| `draw3d`    | x pos | y pos | Vert Width | Horz Height | Color 1 | Color 2 | Size  |
+
+
