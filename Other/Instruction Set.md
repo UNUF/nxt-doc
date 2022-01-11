@@ -44,7 +44,7 @@ The _Arguments_ column gives you the number of arguments or the specific argumen
 | `deldir`            | 2                                                                                        | `_________X3_X5` |        |             |
 | `delfile`           | 1                                                                                        | `_________X3_X5` |        |             |
 | `doevents`          | 2                                                                                        | `T0_T1_K0_X3_X5` |        |             |
-| `draw`              | 2                                                                                        | `T0_T1____X3_X5` |        |             |
+| `draw`              | 2                                                                                        | `T0_T1_K0_X3_X5` |        |             |
 | `draw_h`            | 13                                                                                       | `T0_T1_K0_X3_X5` | hidden |             |
 | `draw3d`            | 7: `x_start, y_start, width, height, color_top_left, color_bottom_right, border_width`   | `T0 T1_K0_X3_X5` | hidden | Generates a two-color rectangle (as the border of the integrated 3D button graphics). |
 | `fill`              | 1                                                                                        | `T0_T1_K0_X3_X5` |        |             |
