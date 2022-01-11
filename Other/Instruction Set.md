@@ -19,89 +19,89 @@ The commands are sorted alphabetically and it's marked in which series they're a
 
 Additionally it's marked whether the official [Nextion Instruction](https://nextion.tech/instruction-set/) set documents the command/variable.
 
-| Command/Variable    | Series           | Hidden |
-|---------------------|------------------|--------|
-| `addt`              | `T0 T1 K0 X3 X5` |        |
-| `btlen`             | `T0 T1 K0 X3 X5` |        |
-| `cfgpio`            | `-- -- K0 X3 X5` |        |
-| `cir`               | `T0 T1 K0 X3 X5` |        |
-| `cirs`              | `T0 T1 K0 X3 X5` |        |
-| `cle`               | `T0 T1 K0 X3 X5` |        |
-| `click`             | `T0 T1 K0 X3 X5` |        |
-| `cls`               | `T0 T1 K0 X3 X5` |        |
-| `code_c`            | `T0 T1 K0 X3 X5` |        |
-| `com_star`          | `T0 T1 K0 X3 X5` |        |
-| `com_stop`          | `T0 T1 K0 X3 X5` |        |
-| `comok`             | `T0 T1 K0 X3 X5` |        |
-| `cov`               | `T0 T1 K0 X3 X5` |        |
-| `covx`              | `T0 T1 K0 X3 X5` |        |
-| `crcputh`           | `T0 T1 K0 X3 X5` |        |
-| `crcputs`           | `T0 T1 K0 X3 X5` |        |
-| `crcputu`           | `T0 T1 K0 X3 X5` |        |
-| `crcrest`           | `T0 T1 K0 X3 X5` |        |
-| `deldir`            | `-- -- -- X3 X5` |        |
-| `delfile`           | `-- -- -- X3 X5` |        |
-| `doevents`          | `T0 T1 K0 X3 X5` |        |
-| `draw`              | `T0 T1 -- X3 X5` |        |
-| `draw_h`            | `T0 T1 K0 X3 X5` | Y      |
-| `draw3d`            | `T0 T1 K0 X3 X5` | Y      |
-| `fill`              | `T0 T1 K0 X3 X5` |        |
-| `finddir`           | `-- -- -- X3 X5` |        |
-| `findfile`          | `-- -- -- X3 X5` |        |
-| `fstr`              | `T0 T1 K0 -- -- ` | Y      |
-| `get`               | `T0 T1 K0 X3 X5` |        |
-| `getpassw`          | `T0 T1 K0 X3 X5` | y      |
-| `i`                 | `T0 T1 K0 X3 X5` | y      |
-| `init`              | `T0 T1 K0 X3 X5` | y      |
-| `lcd_dev`           | `T0 T1 K0 X3 X5` | y      |
-| `lcd_refx`          | `T0 T1 K0 X3 X5` | y      |
-| `lhmi_cle`          | `T0 T1 K0 X3 X5` | y      |
-| `line`              | `T0 T1 K0 X3 X5` |        |
-| `move`              | `-- -- -- X3 X5` |        |
-| `newdir`            | `-- -- -- X3 X5` |        |
-| `newfile`           | `-- -- -- X3 X5` |        |
-| `nstr`              | `T0 T1 K0 X3 X5` | Y      |
-| `pa_q`              | `T0 T1 K0 X3 X5` | Y      |
-| `pa_txt`            | `T0 T1 K0 X3 X5` | Y      |
-| `page`              | `T0 T1 K0 X3 X5` |        |
-| `pic`               | `T0 T1 K0 X3 X5` |        |
-| `picq`              | `T0 T1 K0 X3 X5` |        |
-| `play`              | `-- -- -- X3 X5` |        |
-| `print`             | `T0 T1 K0 X3 X5` |        |
-| `printh`            | `T0 T1 K0 X3 X5` |        |
-| `prints`            | `T0 T1 K0 X3 X5` |        |
-| `qrcode`            | `T0 T1 K0 X3 X5` | Y      |
-| `randset`           | `T0 T1 K0 X3 X5` |        |
-| `rdfile`            | `-- -- -- X3 X5` |        |
-| `redir`             | `-- -- -- X3 X5` |        |
-| `ref`               | `T0 T1 K0 X3 X5` |        |
-| `ref_star`          | `T0 T1 K0 X3 X5` |        |
-| `ref_stop`          | `T0 T1 K0 X3 X5` |        |
-| `refile`            | `-- -- -- X3 X5` |        |
-| `repo`              | `-- -- K0 X3 X5` |        |
-| `rept`              | `-- -- K0 X3 X5` |        |
-| `rest`              | `T0 T1 -- X3 X5` |        |
-| `rfpt`              | `T0 T1 -- X3 X5` | Y      |
-| `sendme`            | `T0 T1 K0 X3 X5` |        |
-| `setbaudz`          | `T0 T1 K0 X3 X5` | Y      |
-| `setbrush`          | `T0 T1 K0 X3 X5` | Y      |
-| `setlayer`          | `-- -- -- X3 X5` | Y      |
-| `showqq`            | `T0 T1 K0 X3 X5` | Y      |
-| `spstr`             | `T0 T1 K0 X3 X5` |        |
-| `strlen`            | `T0 T1 K0 X3 X5` |        |
-| `strsize`           | `T0 T1 K0 X3 X5` | Y      |
-| `substr`            | `T0 T1 K0 X3 X5` |        |
-| `timerset`          | `T0 T1 K0 X3 X5` | Y      |
-| `touch_j`           | `T0 T1 K0 X3 X5` |        |
-| `tsw`               | `T0 T1 K0 X3 X5` |        |
-| `twfile`            | `-- -- -- X3 X5` |        |
-| `ucopy`             | `T0 T1 K0 X3 X5` |        |
-| `udelete`           | `T0 T1 K0 X3 X5` |        |
-| `vis`               | `T0 T1 K0 X3 X5` |        |
-| `wepo`              | `-- -- K0 X3 X5` |        |
-| `wept`              | `-- -- K0 X3 X5` |        |
-| `wfpt`              | `T0 T1 -- X3 X5` | y      |
-| `whmi_cle`          | `T0 T1 K0 X3 X5` | y      |
-| `xpic`              | `T0 T1 K0 X3 X5` |        |
-| `xstr`              | `T0 T1 K0 X3 X5` |        |
-| `zstr`              | `T0 T1 K0 X3 X5` | Y      |
+| Command/Variable    | Arguments | Series           | Hidden |
+|---------------------|-----------|------------------|--------|
+| `addt`              | 3         | `T0 T1 K0 X3 X5` |        |
+| `btlen`             | 2         | `T0 T1 K0 X3 X5` |        |
+| `cfgpio`            | 7         | `-- -- K0 X3 X5` |        |
+| `cir`               | 3         | `T0 T1 K0 X3 X5` |        |
+| `cirs`              | 4         | `T0 T1 K0 X3 X5` |        |
+| `cle`               | 2         | `T0 T1 K0 X3 X5` |        |
+| `click`             | 2         | `T0 T1 K0 X3 X5` |        |
+| `cls`               | 1         | `T0 T1 K0 X3 X5` |        |
+| `code_c`            | 0         | `T0 T1 K0 X3 X5` |        |
+| `com_star`          | 0         | `T0 T1 K0 X3 X5` |        |
+| `com_stop`          | 3         | `T0 T1 K0 X3 X5` |        |
+| `comok`             | 4         | `T0 T1 K0 X3 X5` |        |
+| `cov`               | 1         | `T0 T1 K0 X3 X5` |        |
+| `covx`              | 2         | `T0 T1 K0 X3 X5` |        |
+| `crcputh`           | 2         | `T0 T1 K0 X3 X5` |        |
+| `crcputs`           | 2         | `T0 T1 K0 X3 X5` |        |
+| `crcputu`           | 0         | `T0 T1 K0 X3 X5` |        |
+| `crcrest`           | 5         | `T0 T1 K0 X3 X5` |        |
+| `deldir`            | 2         | `-- -- -- X3 X5` |        |
+| `delfile`           | 1         | `-- -- -- X3 X5` |        |
+| `doevents`          | 2         | `T0 T1 K0 X3 X5` |        |
+| `draw`              | 2         | `T0 T1 -- X3 X5` |        |
+| `draw_h`            | 13        | `T0 T1 K0 X3 X5` | Y      |
+| `draw3d`            | 7         | `T0 T1 K0 X3 X5` | Y      |
+| `fill`              | 1         | `T0 T1 K0 X3 X5` |        |
+| `finddir`           | 5         | `-- -- -- X3 X5` |        |
+| `findfile`          | 2         | `-- -- -- X3 X5` |        |
+| `fstr`              | 3         | `T0 T1 K0 -- --` | Y      |
+| `get`               | 7         | `T0 T1 K0 X3 X5` |        |
+| `getpassw`          | 0         | `T0 T1 K0 X3 X5` | y      |
+| `i`                 | 4         | `T0 T1 K0 X3 X5` | y      |
+| `init`              | 1         | `T0 T1 K0 X3 X5` | y      |
+| `lcd_dev`           | 1         | `T0 T1 K0 X3 X5` | y      |
+| `lcd_refx`          | 0         | `T0 T1 K0 X3 X5` | y      |
+| `lhmi_cle`          | 0         | `T0 T1 K0 X3 X5` | y      |
+| `line`              | 1         | `T0 T1 K0 X3 X5` |        |
+| `move`              | 5         | `-- -- -- X3 X5` |        |
+| `newdir`            | 4         | `-- -- -- X3 X5` |        |
+| `newfile`           | 4         | `-- -- -- X3 X5` |        |
+| `nstr`              | 3         | `T0 T1 K0 X3 X5` | Y      |
+| `pa_q`              | 2         | `T0 T1 K0 X3 X5` | Y      |
+| `pa_txt`            | 4         | `T0 T1 K0 X3 X5` | Y      |
+| `page`              | 2         | `T0 T1 K0 X3 X5` |        |
+| `pic`               | 1         | `T0 T1 K0 X3 X5` |        |
+| `picq`              | 3         | `T0 T1 K0 X3 X5` |        |
+| `play`              | 4         | `-- -- -- X3 X5` |        |
+| `print`             | 5         | `T0 T1 K0 X3 X5` |        |
+| `printh`            | 3         | `T0 T1 K0 X3 X5` |        |
+| `prints`            | 1         | `T0 T1 K0 X3 X5` |        |
+| `qrcode`            | 7         | `T0 T1 K0 X3 X5` | Y      |
+| `randset`           | 1         | `T0 T1 K0 X3 X5` |        |
+| `rdfile`            | 1         | `-- -- -- X3 X5` |        |
+| `redir`             | 0         | `-- -- -- X3 X5` |        |
+| `ref`               | 2         | `T0 T1 K0 X3 X5` |        |
+| `ref_star`          | 2         | `T0 T1 K0 X3 X5` |        |
+| `ref_stop`          | 1         | `T0 T1 K0 X3 X5` |        |
+| `refile`            | 0         | `-- -- -- X3 X5` |        |
+| `repo`              | 0         | `-- -- K0 X3 X5` |        |
+| `rept`              | 0         | `-- -- K0 X3 X5` |        |
+| `rest`              | 2         | `T0 T1 -- X3 X5` |        |
+| `rfpt`              | 3         | `T0 T1 -- X3 X5` | Y      |
+| `sendme`            | 2         | `T0 T1 K0 X3 X5` |        |
+| `setbaudz`          | 1         | `T0 T1 K0 X3 X5` | Y      |
+| `setbrush`          | 15        | `T0 T1 K0 X3 X5` | Y      |
+| `setlayer`          | 2         | `-- -- -- X3 X5` | Y      |
+| `showqq`            | 0         | `T0 T1 K0 X3 X5` | Y      |
+| `spstr`             | 0         | `T0 T1 K0 X3 X5` |        |
+| `strlen`            | 2         | `T0 T1 K0 X3 X5` |        |
+| `strsize`           | 3         | `T0 T1 K0 X3 X5` | Y      |
+| `substr`            | 4         | `T0 T1 K0 X3 X5` |        |
+| `timerset`          | 4         | `T0 T1 K0 X3 X5` | Y      |
+| `touch_j`           | 0         | `T0 T1 K0 X3 X5` |        |
+| `tsw`               | 2         | `T0 T1 K0 X3 X5` |        |
+| `twfile`            | 2         | `-- -- -- X3 X5` |        |
+| `ucopy`             | 1         | `T0 T1 K0 X3 X5` |        |
+| `udelete`           | 2         | `T0 T1 K0 X3 X5` |        |
+| `vis`               | 2         | `T0 T1 K0 X3 X5` |        |
+| `wepo`              | 2         | `-- -- K0 X3 X5` |        |
+| `wept`              | 4         | `-- -- K0 X3 X5` |        |
+| `wfpt`              | 3         | `T0 T1 -- X3 X5` | y      |
+| `whmi_cle`          | 2         | `T0 T1 K0 X3 X5` | y      |
+| `xpic`              | 7         | `T0 T1 K0 X3 X5` |        |
+| `xstr`              | 11        | `T0 T1 K0 X3 X5` |        |
+| `zstr`              | 5         | `T0 T1 K0 X3 X5` | Y      |
