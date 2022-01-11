@@ -19,7 +19,7 @@ The commands are sorted alphabetically and it's marked in which series they're a
 
 Additionally it's marked whether the official [Nextion Instruction](https://nextion.tech/instruction-set/) set documents the command/variable.
 
-The _Arguments_ column gives you the number of arguments or the specific arguments required.
+The _Arguments_ column gives you the number of arguments or the specific arguments required (in order, with the correct separator).
 
 | Command/Variable    | Arguments                                                                                | Series           | Hidden | Description |
 |---------------------|------------------------------------------------------------------------------------------|------------------|--------|-------------|
