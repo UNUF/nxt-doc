@@ -46,7 +46,7 @@ The _Arguments_ column gives you the number of arguments or the specific argumen
 | `doevents`          | 2         | `T0 T1 K0 X3 X5` |        |             |
 | `draw`              | 2         | `T0 T1 -- X3 X5` |        |             |
 | `draw_h`            | 13        | `T0 T1 K0 X3 X5` | Y      |             |
-| `draw3d`            | 7: `x_start,y_start,width,height,color_top_left,color_bottom_right,border_width`         | `T0 T1 K0 X3 X5` | Y      | Generates a two-color rectangle (as the border of the integrated 3D button graphics). |
+| `draw3d`            | 7: `x_start, y_start, width, height, color_top_left, color_bottom_right, border_width`         | `T0 T1 K0 X3 X5` | Y      | Generates a two-color rectangle (as the border of the integrated 3D button graphics). |
 | `fill`              | 1         | `T0 T1 K0 X3 X5` |        |             |
 | `finddir`           | 5         | `-- -- -- X3 X5` |        |             |
 | `findfile`          | 2         | `-- -- -- X3 X5` |        |             |
@@ -72,7 +72,7 @@ The _Arguments_ column gives you the number of arguments or the specific argumen
 | `print`             | 5         | `T0 T1 K0 X3 X5` |        |             |
 | `printh`            | 3         | `T0 T1 K0 X3 X5` |        |             |
 | `prints`            | 1         | `T0 T1 K0 X3 X5` |        |             |
-| `qrcode`            | 7: `x_start,y_start,size,back_color,front_color,overlay_pic_id,text` | `T0 T1 K0 X3 X5` | Y      | Generates a QR code at runtime; similar capabilities as the QR code component. |
+| `qrcode`            | 7: `x_start, y_start, size, back_color, front_color, overlay_pic_id, text` | `T0 T1 K0 X3 X5` | Y      | Generates a QR code at runtime; similar capabilities as the QR code component. |
 | `randset`           | 1         | `T0 T1 K0 X3 X5` |        |             |
 | `rdfile`            | 1         | `-- -- -- X3 X5` |        |             |
 | `redir`             | 0         | `-- -- -- X3 X5` |        |             |
