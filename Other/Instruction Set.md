@@ -21,89 +21,178 @@ Additionally it's marked whether the official [Nextion Instruction Set](https://
 
 The _Arguments_ column gives you the number of arguments or the specific arguments required (in order, with the correct separator).
 
-| Command/Variable    | Arguments                                                                                | Series           | Hidden | Description |
-|---------------------|------------------------------------------------------------------------------------------|------------------|--------|-------------|
-| `addt`              | 3                                                                                        | `T0_T1_K0_X3_X5` |        |             |
-| `btlen`             | 2                                                                                        | `T0_T1_K0_X3_X5` |        |             |
-| `cfgpio`            | 7                                                                                        | `______K0_X3_X5` |        |             |
-| `cir`               | 3                                                                                        | `T0_T1_K0_X3_X5` |        |             |
-| `cirs`              | 4                                                                                        | `T0_T1_K0_X3_X5` |        |             |
-| `cle`               | 2                                                                                        | `T0_T1_K0_X3_X5` |        |             |
-| `click`             | 2                                                                                        | `T0_T1_K0_X3_X5` |        |             |
-| `cls`               | 1                                                                                        | `T0_T1_K0_X3_X5` |        |             |
-| `code_c`            | 0                                                                                        | `T0_T1_K0_X3_X5` |        |             |
-| `com_star`          | 0                                                                                        | `T0_T1_K0_X3_X5` |        |             |
-| `com_stop`          | 3                                                                                        | `T0_T1_K0_X3_X5` |        |             |
-| `comok`             | 4                                                                                        | `T0_T1_K0_X3_X5` |        |             |
-| `cov`               | 1                                                                                        | `T0_T1_K0_X3_X5` |        |             |
-| `covx`              | 2                                                                                        | `T0_T1_K0_X3_X5` |        |             |
-| `crcputh`           | 2                                                                                        | `T0_T1_K0_X3_X5` |        |             |
-| `crcputs`           | 2                                                                                        | `T0_T1_K0_X3_X5` |        |             |
-| `crcputu`           | 0                                                                                        | `T0_T1_K0_X3_X5` |        |             |
-| `crcrest`           | 5                                                                                        | `T0_T1_K0_X3_X5` |        |             |
-| `deldir`            | 2                                                                                        | `_________X3_X5` |        |             |
-| `delfile`           | 1                                                                                        | `_________X3_X5` |        |             |
-| `doevents`          | 2                                                                                        | `T0_T1_K0_X3_X5` |        |             |
-| `draw`              | 2                                                                                        | `T0_T1_K0_X3_X5` |        |             |
-| `draw_h`            | 13                                                                                       | `T0_T1_K0_X3_X5` | hidden |             |
-| `draw3d`            | 7: `x_start, y_start, width, height, color_top_left, color_bottom_right, border_width`   | `T0 T1_K0_X3_X5` | hidden | Generates a two-color rectangle (as the border of the integrated 3D button graphics). |
-| `fill`              | 1                                                                                        | `T0_T1_K0_X3_X5` |        |             |
-| `finddir`           | 5                                                                                        | `_________X3_X5` |        |             |
-| `findfile`          | 2                                                                                        | `_________X3_X5` |        |             |
-| `fstr`              | 3: `input_int, digits_before_point, digits_after_point`                                  | `T0_T1_K0______` | hidden | Converts an integer to a sort of float-string by copying the specified number upper most digits before the decimal point and the specified number of lower digits after the decimal point (and dropping digits inbetween). Writes result to the topmost component (use f.ex. `ref x` plus `doevents` to bring the desired component to the top). |
-| `get`               | 7                                                                                        | `T0_T1_K0_X3_X5` |        |             |
-| `getpassw`          | 0                                                                                        | `T0_T1_K0_X3_X5` | hidden |             |
-| `i`                 | 4                                                                                        | `T0_T1_K0_X3_X5` | hidden |             |
-| `init`              | 1                                                                                        | `T0_T1_K0_X3_X5` | hidden |             |
-| `lcd_dev`           | 1                                                                                        | `T0_T1_K0_X3_X5` | hidden |             |
-| `lcd_refx`          | 0                                                                                        | `T0_T1_K0_X3_X5` | hidden |             |
-| `lhmi_cle`          | 0                                                                                        | `T0_T1_K0_X3_X5` | hidden |             |
-| `line`              | 1                                                                                        | `T0_T1_K0_X3_X5` |        |             |
-| `move`              | 5                                                                                        | `_________X3_X5` |        |             |
-| `newdir`            | 4                                                                                        | `_________X3_X5` |        |             |
-| `newfile`           | 4                                                                                        | `_________X3_X5` |        |             |
-| `nstr`              | 3                                                                                        | `T0_T1_K0_X3_X5` | hidden |             |
-| `pa_q`              | 2                                                                                        | `T0_T1_K0_X3_X5` | hidden |             |
-| `pa_txt`            | 4                                                                                        | `T0_T1_K0_X3_X5` | hidden |             |
-| `page`              | 2                                                                                        | `T0_T1_K0_X3_X5` |        |             |
-| `pic`               | 1                                                                                        | `T0_T1_K0_X3_X5` |        |             |
-| `picq`              | 3                                                                                        | `T0_T1_K0_X3_X5` |        |             |
-| `play`              | 4                                                                                        | `_________X3_X5` |        |             |
-| `print`             | 5                                                                                        | `T0_T1_K0_X3_X5` |        |             |
-| `printh`            | 3                                                                                        | `T0_T1_K0_X3_X5` |        |             |
-| `prints`            | 1                                                                                        | `T0_T1_K0_X3_X5` |        |             |
-| `qrcode`            | 7: `x_start, y_start, size, back_color, front_color, overlay_pic_id, text`               | `T0 T1_K0_X3_X5` | hidden | Generates a QR code at runtime; similar capabilities as the QR code component. |
-| `randset`           | 1                                                                                        | `T0_T1_K0_X3_X5` |        |             |
-| `rdfile`            | 1                                                                                        | `_________X3_X5` |        |             |
-| `redir`             | 0                                                                                        | `_________X3_X5` |        |             |
-| `ref`               | 2                                                                                        | `T0_T1_K0_X3_X5` |        |             |
-| `ref_star`          | 2                                                                                        | `T0_T1_K0_X3_X5` |        |             |
-| `ref_stop`          | 1                                                                                        | `T0_T1_K0_X3_X5` |        |             |
-| `refile`            | 0                                                                                        | `_________X3_X5` |        |             |
-| `repo`              | 0                                                                                        | `______K0_X3_X5` |        |             |
-| `rept`              | 0                                                                                        | `______K0_X3_X5` |        |             |
-| `rest`              | 2                                                                                        | `T0_T1____X3_X5` |        |             |
-| `rfpt`              | 3                                                                                        | `T0_T1____X3_X5` | hidden |             |
-| `sendme`            | 2                                                                                        | `T0_T1_K0_X3_X5` |        |             |
-| `setbaudz`          | 1                                                                                        | `T0_T1_K0_X3_X5` | hidden |             |
-| `setbrush`          | 15                                                                                       | `T0_T1_K0_X3_X5` | hidden |             |
-| `setlayer`          | 2                                                                                        | `_________X3_X5` | hidden |             |
-| `showqq`            | 0                                                                                        | `T0_T1_K0_X3_X5` | hidden |             |
-| `spstr`             | 0                                                                                        | `T0_T1_K0_X3_X5` |        |             |
-| `strlen`            | 2                                                                                        | `T0_T1_K0_X3_X5` |        |             |
-| `strsize`           | 3                                                                                        | `T0_T1_K0_X3_X5` | hidden |             |
-| `substr`            | 4                                                                                        | `T0_T1_K0_X3_X5` |        |             |
-| `timerset`          | 4                                                                                        | `T0_T1_K0_X3_X5` | hidden |             |
-| `touch_j`           | 0                                                                                        | `T0_T1_K0_X3_X5` |        |             |
-| `tsw`               | 2                                                                                        | `T0_T1_K0_X3_X5` |        |             |
-| `twfile`            | 2                                                                                        | `_________X3_X5` |        |             |
-| `ucopy`             | 1                                                                                        | `T0_T1_K0_X3_X5` |        |             |
-| `udelete`           | 2                                                                                        | `T0_T1_K0_X3_X5` |        |             |
-| `vis`               | 2                                                                                        | `T0_T1_K0_X3_X5` |        |             |
-| `wepo`              | 2                                                                                        | `______K0_X3_X5` |        |             |
-| `wept`              | 4                                                                                        | `______K0_X3_X5` |        |             |
-| `wfpt`              | 3                                                                                        | `T0_T1____X3_X5` | hidden |             |
-| `whmi_cle`          | 2                                                                                        | `T0_T1_K0_X3_X5` | hidden |             |
-| `xpic`              | 7                                                                                        | `T0_T1_K0_X3_X5` |        |             |
-| `xstr`              | 11                                                                                       | `T0_T1_K0_X3_X5` |        |             |
-| `zstr`              | 5                                                                                        | `T0_T1_K0_X3_X5` | hidden |             |
+| Command    | Series           | Hidden | Arguments                                                                                | Description |
+|------------|------------------|--------|------------------------------------------------------------------------------------------|-------------|
+| `addt`     | `T0_T1_K0_X3_X5` |        | 3                                                                                        |             |
+| `btlen`    | `T0_T1_K0_X3_X5` |        | 2                                                                                        |             |
+| `cfgpio`   | `______K0_X3_X5` |        | 7                                                                                        |             |
+| `cir`      | `T0_T1_K0_X3_X5` |        | 3                                                                                        |             |
+| `cirs`     | `T0_T1_K0_X3_X5` |        | 4                                                                                        |             |
+| `cle`      | `T0_T1_K0_X3_X5` |        | 2                                                                                        |             |
+| `click`    | `T0_T1_K0_X3_X5` |        | 2                                                                                        |             |
+| `cls`      | `T0_T1_K0_X3_X5` |        | 1                                                                                        |             |
+| `code_c`   | `T0_T1_K0_X3_X5` |        | 0                                                                                        |             |
+| `com_star` | `T0_T1_K0_X3_X5` |        | 0                                                                                        |             |
+| `com_stop` | `T0_T1_K0_X3_X5` |        | 3                                                                                        |             |
+| `comok`    | `T0_T1_K0_X3_X5` |        | 4                                                                                        |             |
+| `cov`      | `T0_T1_K0_X3_X5` |        | 1                                                                                        |             |
+| `covx`     | `T0_T1_K0_X3_X5` |        | 2                                                                                        |             |
+| `crcputh`  | `T0_T1_K0_X3_X5` |        | 2                                                                                        |             |
+| `crcputs`  | `T0_T1_K0_X3_X5` |        | 2                                                                                        |             |
+| `crcputu`  | `T0_T1_K0_X3_X5` |        | 0                                                                                        |             |
+| `crcrest`  | `T0_T1_K0_X3_X5` |        | 5                                                                                        |             |
+| `deldir`   | `_________X3_X5` |        | 2                                                                                        |             |
+| `delfile`  | `_________X3_X5` |        | 1                                                                                        |             |
+| `doevents` | `T0_T1_K0_X3_X5` |        | 2                                                                                        |             |
+| `draw`     | `T0_T1_K0_X3_X5` |        | 2                                                                                        |             |
+| `draw_h`   | `T0_T1_K0_X3_X5` | hidden | 13                                                                                       |             |
+| `draw3d`   | `T0 T1_K0_X3_X5` | hidden | 7: `x_start, y_start, width, height, color_top_left, color_bottom_right, border_width`   | Generates a two-color rectangle (as the border of the integrated 3D button graphics). |
+| `fill`     | `T0_T1_K0_X3_X5` |        | 1                                                                                        |             |
+| `finddir`  | `_________X3_X5` |        | 5                                                                                        |             |
+| `findfile` | `_________X3_X5` |        | 2                                                                                        |             |
+| `fstr`     | `T0_T1_K0______` | hidden | 3: `input_int, digits_before_point, digits_after_point`                                  | Converts an integer to a sort of float-string by copying the specified number upper most digits before the decimal point and the specified number of lower digits after the decimal point (and dropping digits inbetween). Writes result to the topmost component (use f.ex. `ref x` plus `doevents` to bring the desired component to the top). |
+| `get`      | `T0_T1_K0_X3_X5` |        | 7                                                                                        |             |
+| `getpassw` | `T0_T1_K0_X3_X5` | hidden | 0                                                                                        |             |
+| `i`        | `T0_T1_K0_X3_X5` | hidden | 4                                                                                        |             |
+| `init`     | `T0_T1_K0_X3_X5` | hidden | 1                                                                                        |             |
+| `lcd_dev`  | `T0_T1_K0_X3_X5` | hidden | 1                                                                                        |             |
+| `lcd_refx` | `T0_T1_K0_X3_X5` | hidden | 0                                                                                        |             |
+| `lhmi_cle` | `T0_T1_K0_X3_X5` | hidden | 0                                                                                        |             |
+| `line`     | `T0_T1_K0_X3_X5` |        | 1                                                                                        |             |
+| `move`     | `_________X3_X5` |        | 5                                                                                        |             |
+| `newdir`   | `_________X3_X5` |        | 4                                                                                        |             |
+| `newfile`  | `_________X3_X5` |        | 4                                                                                        |             |
+| `nstr`     | `T0_T1_K0_X3_X5` | hidden | 3                                                                                        |             |
+| `pa_q`     | `T0_T1_K0_X3_X5` | hidden | 2                                                                                        |             |
+| `pa_txt`   | `T0_T1_K0_X3_X5` | hidden | 4                                                                                        |             |
+| `page`     | `T0_T1_K0_X3_X5` |        | 2                                                                                        |             |
+| `pic`      | `T0_T1_K0_X3_X5` |        | 1                                                                                        |             |
+| `picq`     | `T0_T1_K0_X3_X5` |        | 3                                                                                        |             |
+| `play`     | `_________X3_X5` |        | 4                                                                                        |             |
+| `print`    | `T0_T1_K0_X3_X5` |        | 5                                                                                        |             |
+| `printh`   | `T0_T1_K0_X3_X5` |        | 3                                                                                        |             |
+| `prints`   | `T0_T1_K0_X3_X5` |        | 1                                                                                        |             |
+| `qrcode`   | `T0 T1_K0_X3_X5` | hidden | 7: `x_start, y_start, size, back_color, front_color, overlay_pic_id, text`               | Generates a QR code at runtime; similar capabilities as the QR code component. |
+| `randset`  | `T0_T1_K0_X3_X5` |        | 1                                                                                        |             |
+| `rdfile`   | `_________X3_X5` |        | 1                                                                                        |             |
+| `redir`    | `_________X3_X5` |        | 0                                                                                        |             |
+| `ref`      | `T0_T1_K0_X3_X5` |        | 2                                                                                        |             |
+| `ref_star` | `T0_T1_K0_X3_X5` |        | 2                                                                                        |             |
+| `ref_stop` | `T0_T1_K0_X3_X5` |        | 1                                                                                        |             |
+| `refile`   | `_________X3_X5` |        | 0                                                                                        |             |
+| `repo`     | `______K0_X3_X5` |        | 0                                                                                        |             |
+| `rept`     | `______K0_X3_X5` |        | 0                                                                                        |             |
+| `rest`     | `T0_T1____X3_X5` |        | 2                                                                                        |             |
+| `rfpt`     | `T0_T1____X3_X5` | hidden | 3                                                                                        |             |
+| `sendme`   | `T0_T1_K0_X3_X5` |        | 2                                                                                        |             |
+| `setbaudz` | `T0_T1_K0_X3_X5` | hidden | 1                                                                                        |             |
+| `setbrush` | `T0_T1_K0_X3_X5` | hidden | 15                                                                                       |             |
+| `setlayer` | `_________X3_X5` | hidden | 2                                                                                        |             |
+| `showqq`   | `T0_T1_K0_X3_X5` | hidden | 0                                                                                        |             |
+| `spstr`    | `T0_T1_K0_X3_X5` |        | 0                                                                                        |             |
+| `strlen`   | `T0_T1_K0_X3_X5` |        | 2                                                                                        |             |
+| `strsize`  | `T0_T1_K0_X3_X5` | hidden | 3                                                                                        |             |
+| `substr`   | `T0_T1_K0_X3_X5` |        | 4                                                                                        |             |
+| `timerset` | `T0_T1_K0_X3_X5` | hidden | 4                                                                                        |             |
+| `touch_j`  | `T0_T1_K0_X3_X5` |        | 0                                                                                        |             |
+| `tsw`      | `T0_T1_K0_X3_X5` |        | 2                                                                                        |             |
+| `twfile`   | `_________X3_X5` |        | 2                                                                                        |             |
+| `ucopy`    | `T0_T1_K0_X3_X5` |        | 1                                                                                        |             |
+| `udelete`  | `T0_T1_K0_X3_X5` |        | 2                                                                                        |             |
+| `vis`      | `T0_T1_K0_X3_X5` |        | 2                                                                                        |             |
+| `wepo`     | `______K0_X3_X5` |        | 2                                                                                        |             |
+| `wept`     | `______K0_X3_X5` |        | 4                                                                                        |             |
+| `wfpt`     | `T0_T1____X3_X5` | hidden | 3                                                                                        |             |
+| `whmi_cle` | `T0_T1_K0_X3_X5` | hidden | 2                                                                                        |             |
+| `xpic`     | `T0_T1_K0_X3_X5` |        | 7                                                                                        |             |
+| `xstr`     | `T0_T1_K0_X3_X5` |        | 11                                                                                       |             |
+| `zstr`     | `T0_T1_K0_X3_X5` | hidden | 5                                                                                        |             |
+
+## Variables List
+
+Most stuff is similar to the commands list above.
+
+| Variable   | Series           | hidden | Description |
+|------------|------------------|--------|-------------|
+| `addr`     | `T0_T1_K0_X3_X5` |        |             |
+| `aph`      | `_________X3_X5` | hidden |             |
+| `appid`    | `T0_T1_K0_X3_X5` | hidden |             |
+| `audio0`   | `_________X3_X5` |        |             |
+| `audio1`   | `_________X3_X5` |        |             |
+| `baud`     | `T0_T1_K0_X3_X5` |        |             |
+| `bauds`    | `T0_T1_K0_X3_X5` |        |             |
+| `bcpu`     | `T0_T1_K0_X3_X5` | hidden |             |
+| `bkcmd`    | `T0_T1_K0_X3_X5` |        |             |
+| `BLACK`    | `T0_T1_K0_X3_X5` |        |             |
+| `BLUE`     | `T0_T1_K0_X3_X5` |        |             |
+| `BROWN`    | `T0_T1_K0_X3_X5` |        |             |
+| `crcval`   | `T0_T1_K0_X3_X5` |        |             |
+| `delay`    | `T0_T1_K0_X3_X5` |        |             |
+| `dim`      | `T0_T1_K0_X3_X5` |        |             |
+| `dims`     | `T0_T1_K0_X3_X5` |        |             |
+| `dp`       | `T0_T1_K0_X3_X5` |        |             |
+| `eq0`      | `_________X3_X5` |        |             |
+| `eq1`      | `_________X3_X5` |        |             |
+| `eq2`      | `_________X3_X5` |        |             |
+| `eq3`      | `_________X3_X5` |        |             |
+| `eq4`      | `_________X3_X5` |        |             |
+| `eq5`      | `_________X3_X5` |        |             |
+| `eq6`      | `_________X3_X5` |        |             |
+| `eq7`      | `_________X3_X5` |        |             |
+| `eq8`      | `_________X3_X5` |        |             |
+| `eq9`      | `_________X3_X5` |        |             |
+| `eqh`      | `_________X3_X5` |        |             |
+| `eql`      | `_________X3_X5` |        |             |
+| `eqm`      | `_________X3_X5` |        |             |
+| `GRAY`     | `T0_T1_K0_X3_X5` |        |             |
+| `GREEN`    | `T0_T1_K0_X3_X5` |        |             |
+| `lowpower` | `___T1_________` |        |             |
+| `pio0`     | `______K0____X5` |        |             |
+| `pio1`     | `______K0____X5` |        |             |
+| `pio2`     | `______K0____X5` |        |             |
+| `pio3`     | `______K0____X5` |        |             |
+| `pio4`     | `______K0____X5` |        |             |
+| `pio5`     | `______K0____X5` |        |             |
+| `pio6`     | `______K0____X5` |        |             |
+| `pio7`     | `______K0____X5` |        |             |
+| `portbusy` | `T0_T1_K0_X3_X5` | hidden |             |
+| `pwm4`     | `______K0____X5` |        |             |
+| `pwm5`     | `______K0____X5` |        |             |
+| `pwm6`     | `______K0____X5` |        |             |
+| `pwm7`     | `______K0____X5` |        |             |
+| `pwmf`     | `______K0____X5` |        |             |
+| `rand`     | `T0_T1_K0_X3_X5` |        |             |
+| `recmod`   | `T0_T1_K0_X3_X5` |        |             |
+| `RED`      | `T0_T1_K0_X3_X5` |        |             |
+| `rtc0`     | `______K0____X5` |        |             |
+| `rtc1`     | `______K0____X5` |        |             |
+| `rtc2`     | `______K0____X5` |        |             |
+| `rtc3`     | `______K0____X5` |        |             |
+| `rtc4`     | `______K0____X5` |        |             |
+| `rtc5`     | `______K0____X5` |        |             |
+| `rtc6`     | `______K0____X5` |        |             |
+| `runmod`   | `T0_T1_K0_X3_X5` | hidden |             |
+| `sendxy`   | `T0_T1_K0_X3_X5` |        |             |
+| `sleep`    | `T0_T1_K0_X3_X5` |        |             |
+| `spax`     | `T0_T1_K0_X3_X5` |        |             |
+| `spay`     | `T0_T1_K0_X3_X5` |        |             |
+| `sya0`     | `T0_T1_K0_X3_X5` | hidden |             |
+| `sya1`     | `T0_T1_K0_X3_X5` | hidden |             |
+| `tch0`     | `T0_T1_K0_X3_X5` |        |             |
+| `tch1`     | `T0_T1_K0_X3_X5` |        |             |
+| `tch2`     | `T0_T1_K0_X3_X5` |        |             |
+| `tch3`     | `T0_T1_K0_X3_X5` |        |             |
+| `thc`      | `T0_T1_K0_X3_X5` |        |             |
+| `thdra`    | `T0_T1_K0_X3_X5` |        |             |
+| `thsp`     | `T0_T1_K0_X3_X5` |        |             |
+| `thup`     | `T0_T1_K0_X3_X5` |        |             |
+| `tpdir`    | `T0_T1_K0_X3_X5` | hidden |             |
+| `tprc`     | `_________X3_X5` | hidden |             |
+| `usize`    | `T0_T1_K0_X3_X5` |        |             |
+| `ussp`     | `T0_T1_K0_X3_X5` |        |             |
+| `usup`     | `T0_T1_K0_X3_X5` |        |             |
+| `volume`   | `_________X3_X5` |        |             |
+| `WHITE`    | `T0_T1_K0_X3_X5` |        |             |
+| `wup`      | `T0_T1_K0_X3_X5` |        |             |
+| `YELLOW`   | `T0_T1_K0_X3_X5` |        |             |
+
