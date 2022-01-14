@@ -11,6 +11,7 @@ This repository aims to document everything from the Nextion ecosystem. File for
 	* [TFT](/File%20Formats/TFT.md#readme) (Compiled binary)
 	* ZI (Font) - TBD
 * Protocols
+	* [Full Instruction Set](/Protocols/Full%20Instruction%20Set.md#readme) (includes all the useful instructions the official NIS doesn't tell you about)
 	* [Upload Protocol v1.2](/Protocols/Upload%20Protocol%20v1.2.md#readme) (allows skipping)
 
 ## Other content within the UNUF group
