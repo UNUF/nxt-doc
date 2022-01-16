@@ -120,7 +120,7 @@ Most stuff is similar to the commands list above.
 | `appid`    | `T0_T1_K0_X3_X5_NE` | hidden |                              |
 | `portbusy` | `T0_T1_K0_X3_X5_??` | hidden |                              |
 | `runmod`   | `T0_T1_K0_X3_X5_NE` | hidden | Returns `01 ff ff ff` ("command successful") when assigning 0, 1 or 2 to it - independently of the `bkcmd` setting. Returns nothing when assigning other values. Unsure if this is all that it does. |
-| `sya0`     | `T0_T1_K0_X3_X5_NE` | hidden | Global variable that's used for internal testing (according to Patrick). Can be used as general purpose variable but it might vanish or be repurposed in any upcoming editor version. |
+| `sya0`     | `T0_T1_K0_X3_X5_NE` | hidden | Internal variable that may be used by the system. Althought it behaves like a global variable this can lead to issues if using it as such ([according to Patrick](https://nextion.tech/forums/topic/convert-char-to-its-respective-ascii-code/)). However, there haven't been any such reports yet even though [people have been using it](https://unofficialnextion.com/search?q=sya). |
 | `sya1`     | `T0_T1_K0_X3_X5_NE` | hidden | See `sya0`                   |
 | `tpdir`    | `T0_T1_K0_X3_X5_NE` | hidden |                              |
 | `tprc`     | `_________X3_X5_NE` | hidden |                              |
