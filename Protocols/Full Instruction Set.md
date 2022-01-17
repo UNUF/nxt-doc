@@ -40,7 +40,6 @@ The _Arguments_ column gives you the number of arguments the command expects or 
 | `rfpt`     | `T0_T1____X3_X5_??` | hidden | 3         |                              |
 | `setbaudz` | `T0_T1_K0_X3_X5_??` | hidden | 1         |                              |
 | `setbrush` | `T0_T1_K0_X3_X5_??` | hidden | 15        |                              |
-| `setlayer` | `_________X3_X5_??` | hidden | 2         |                              |
 | `showqq`   | `T0_T1_K0_X3_X5_??` | hidden | 0         |                              |
 | `strsize`  | `T0_T1_K0_X3_X5_??` | hidden | 3         |                              |
 | `timerset` | `T0_T1_K0_X3_X5_??` | hidden | 4         |                              |
@@ -95,6 +94,7 @@ The _Arguments_ column gives you the number of arguments the command expects or 
 | `rept`     | `______K0_X3_X5_??` |        | 0         |                              |
 | `rest`     | `T0_T1____X3_X5_NE` |        | 2         |                              |
 | `sendme`   | `T0_T1_K0_X3_X5_NE` |        | 2         |                              |
+| `setlayer` | `_________X3_X5_??` |        | 2         |                              |
 | `spstr`    | `T0_T1_K0_X3_X5_NE` |        | 0         |                              |
 | `strlen`   | `T0_T1_K0_X3_X5_NE` |        | 2         |                              |
 | `substr`   | `T0_T1_K0_X3_X5_NE` |        | 4         |                              |
