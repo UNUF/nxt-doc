@@ -6,6 +6,8 @@ This page lists _all_ the instructions available for Nextion - especially all th
 
 **Careful!** Some commands here (like the the `lcd_dev` command) might make your device malfunction. We simply don't know enough about them. Others, like `draw3d` are pretty much guaranteed to be safe. 
 
+Please note that this documentation is far from being complete. The list of instructions is (likely) complete but their documentation is not (as you can see) and the existing infos might contain errors. Since no official documentation is provided for the hidden commands (unfortunately), trial and error is the only way to document them. Therefore any contributions - even a simple notification about an error - are highly welcome! 
+
 ## Command List
 
 The following table is a list of all commands and variables available in editor v1.61.2. 
