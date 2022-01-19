@@ -182,8 +182,12 @@ Any data or code "block" is prefixed by a 4 byte value indicating the length of 
 
 #### Types
 
-There are two types of operators: binary operators and what I call list operators. 
+There are three types of operators: unary, binary and what I call list operators. 
 
+Unary operators are f.ex. the `++` postincrement operator. They follow the single operand (though it is imaginable that there'll be variants that prefix it).
+```
+[length][operand_1][operator_unary]
+```
 Binary operator sit inbetween of their operands. Data blocks look like this:
 ```
 [length][operand_1][operator_binary_a][operand_2]
@@ -193,7 +197,7 @@ Multiple binary operators can be combined in one block - it happens when you hav
 [length][operand_1][operator_binary_a][operand_2][operator_binary_b][operand_3][operator_binary_c][operand_4]
 ```
 
-List operators are followed by a specific number of operands (as defined in the Nextion instruction set). The operands are separated by a `0x2c` (`','`) character. There's one exception (in consistence with the instruction set though): the `printh` operator takes a _space_ spearated list (`0x20`, `' '`).
+List operators are followed by a specific number of operands (as defined in the Nextion instruction set), ranging from zero to >10. The operands are separated by a `0x2c` (`','`) character. Note: operators like `printh` that seem to use spaces (`0x20`, `' '`) to separate the operands are internally marked as 1-operand operators. In that way it is consistent with the others. 
 ```
 [length][operator_list][operand_1],[operand_2],[...],[operand_last]
 ```
@@ -204,53 +208,16 @@ Examples are listed below under operands.
 
 The operator itself is encoded with 1 to 3 bytes. 
 
-1 byte operators seem to be math operations only and equal the ASCII code of that operation sign. F.ex. the `=` operator is encoded with `0x3d = '='`. Combined operations like `+=` get encoded as "combined" operator: `+=` becomes `2B 3D` which are the ASCII codes of `'+'` and `'='`. It is not clear if this is an actual operator or just a short form for `a = a + b`. 
+1 byte operators seem to be math operations only and equal the ASCII code of that operation sign. F.ex. the `=` operator is encoded with `0x3d = '='`. Combined operations like `+=` get encoded as "combined" operator: `+=` becomes `2B 3D` which are the ASCII codes of `'+'` and `'='`. It is not clear if this is an actual operator or just a short form for `a = a + b`. Unary operators are encoded in the same way.
 
-One strange exception is the `jmp` command which is encoded as `54 20`. I have no idea why it is different. Any other operator seems to be encoded with 3 bytes, starting with `0x09` and ending with `0x04` or `0x08`. The meaning of this start and end byte - if there is any - is not clear to me. 
+The names of list operators are divided into two categories: up to 4 characters long and up to 8 characters long. Internally the names get padded with `'\x00'` up to a length of either 4 or 8 bytes. They're then interpreted as `uint32` or `uint64` respectively. In the TFT file list operators are encoded with 3 bytes. The first byte is always `0x09`, the third byte is `0x04` or `0x08`, depending on the length of the name. The second byte is a simple number ranging from `0` to `n-1`, `n` being the number of list operators supported by this particular model series. This also means that the encoding is specific to every model series. Because of how the bytes are arranged one can assume that the second and third byte work like a little endian `uint16`. List operators would thus be encoded as `0x09`, `0x0403` f.ex. 
+
+There are two interesting things to note here: The `cjmp` operator (its official name is `i` but I prefer `cjmp`) is always encoded with `0x400` on all series (so far). Secondly the `jmp` operator defeats all schemes presented so far. It is encoded with `54 20`. No `0x09`, no matching ASCII characters, no idea where that comes from. 
+
 
 #### List of Operators
 
-So far I have reverse-engineered the following operators. It's not difficult to complete the list. It's just work. Which I haven't done yet. But YOU could easily help me!
-```
-Operator | Type | Byte code
----------------------------
-=        | bin. | 3D
-+        | bin. | 2B
-*        | bin. | 2A
-+=       | bin. | 2B 3D
-com_stop | list | 09 1E 08
-com_star | list | 09 20 08
-code_c   | list | 09 06 08
-click    | list | 09 00 08
-cir      | list | 09 04 04
-cirs     | list | 09 14 04
-cjmp     | list | 09 00 04
-cls      | list | 09 06 04
-covx     | list | 09 1B 04
-crcrest  | list | 09 17 08
-crcputs  | list | 09 15 08
-doevents | list | 09 21 08
-draw     | list | 09 1A 04
-fill     | list | 09 0D 04
-get      | list | 09 07 04
-jmp      | list | 54 20
-line     | list | 09 0C 04
-page     | list | 09 0B 04
-printh   | list | 09 0B 08
-prints   | list | 09 0F 08
-pic      | list | 09 01 04
-picq     | list | 09 0F 04
-ref_stop | list | 09 1D 08
-ref_star | list | 09 1F 08
-randset  | list | 09 16 08
-ref      | list | 09 03 04
-sendme   | list | 09 09 08
-strlen   | list | 09 0C 08
-spstr    | list | 09 03 08
-touch_j  | list | 09 14 08
-tsw      | list | 09 09 04
-vis      | list | 09 05 04
-```
+A full list of list operators can be found here: [Full Instruction Set](/Protocols/Full%20Instruction%20Set.md#readme). The full list of series specific encodings can be found in the source of the TFTTool: https://github.com/UNUF/TFTTool/blob/main/TFTTool.py
 
 #### Jump Operator (jmp)
 
@@ -259,20 +226,20 @@ vis      | list | 09 05 04
 "Intermediate" Code:
 ```
 prints "Important!! ",0
-jmp +sizeof(prints "I <3 Patrick",0)
-prints "I <3 Patrick",0
+jmp +sizeof(prints "I <3 bubbles",0)
+prints "I <3 bubbles",0
 prints "FREE NEXTION",0
 ```
 Resulting hex:
 ```
 meaning                 | hex
------------------------------
+----------------------------------------------------------------------------------
 Block length            | 13 00 00 00
 prints "Important!! ",0 | 09 0F 08 22 49 6D 70 6F 72 74 61 6E 74 21 21 20 22 2C 30
 Block length            | 07 00 00 00
 jump +23 (0x17) bytes   | 54 20 03 17 00 00 00
 Block length            | 13 00 00 00
-prints "I <3 bubbles",0 | 09 0F 08 22 49 20 3C 33 20 50 61 74 72 69 63 6B 22 2C 30
+prints "I <3 bubbles",0 | 09 0F 08 22 49 20 3C 33 20 62 75 62 62 6C 65 73 22 2C 30
 Block length            | 13 00 00 00
 prints "FREE NEXTION",0 | 09 0F 08 22 46 52 45 45 20 4E 45 58 54 49 4F 4E 22 2C 30
 ```
@@ -280,7 +247,9 @@ This code will print `Important!! FREE NEXTION`. The second print statement - wh
 
 #### Conditional Jump Operator (cjmp)
 
-`cjmp` (`09 00 04`) is a list operator with 4 operands: `cjmp op_a,op_b,comp,offset`, where: 
+Important: This command is actually named `i`. However, I think that causes more confusion than good so I'll call it `cjmp` here. If you want to use it in the Nextion Editor ([which you can](/Protocols/Full%20Instruction%20Set.md#readme)), you of course need to name it as the editor expects it. 
+
+`cjmp` is a list operator with 4 operands: `cjmp op_a,op_b,comp,offset`, where: 
 * op_a: lefthand operand of the condition
 * op_b: righthand operand of the condition
 * comp: compare operator of the condition. The following values are possible:
@@ -319,7 +288,7 @@ Line  Code
 ```
 Resulting hex:
 ```
---------------------------
+----------------------------------
 meaning        | hex
 ----------------------------------
 block length   | 16 00 00 00 
@@ -419,45 +388,20 @@ meaning: length      | fill    |"1"|","|"4"|","|gp   &sys0      |","|lp  &localV
 
 ### System Variables
 
-Like local and global variables, system variables get replaced by a 4 byte offset address, too. The following table is ordered by address. they don't seem to have any particular order. 
+Like local and global variables, system variables get replaced by a 4 byte offset address, too. However, in this case the address is determined in the same way as with the list operators: one byte indicates the length of the name while the other byte is a simple number going from `0` to `n-1`, `n` being the number of system variables available on this particular model series. This once again means that the addresses are specific to the series. 
 
+Notable differences to the list operator encodings are that the two bytes are _swapped_: the LSB encodes the name length, and only the next byte is the number of the variable. The two upper bytes are zero (like all other variables their address is always 4 bytes long). 
+
+Once again, you can find a full list of system variables in the [Full Instruction Set](/Protocols/Full%20Instruction%20Set.md#readme) and their device specific encodings in the source of the TFTTool: https://github.com/UNUF/TFTTool/blob/main/TFTTool.py
+
+Examples (Basic/T0 series):
 ```
 Variable | Address
 ----------------------
 dp       | 04 00 00 00
-WHITE    | 08 00 00 00 
-RED      | 04 01 00 00 
-BLACK    | 08 01 00 00 
-thc      | 04 02 00 00
-GREEN    | 08 02 00 00 
-dim      | 04 03 00 00
-BROWN    | 08 03 00 00 
-wup      | 04 04 00 00
+RED      | 04 01 00 00
+WHITE    | 08 00 00 00
 thdra    | 08 04 00 00
-tch0     | 04 06 00 00
-bkcmd    | 08 06 00 00
-usize    | 08 07 00 00
-tch1     | 04 08 00 00
-sleep    | 08 08 00 00
-tch2     | 04 09 00 00
-tch3     | 04 0A 00 00
-bauds    | 08 0A 00 00
-BLUE     | 04 0B 00 00
-delay    | 08 0B 00 00
-GRAY     | 04 0C 00 00 
-YELLOW   | 08 0C 00 00
-recmod   | 08 0D 00 00
-baud     | 04 0E 00 00
-thsp     | 04 0F 00 00
-crcval   | 08 0F 00 00
-ussp     | 04 10 00 00
-sendxy   | 08 10 00 00
-thup     | 04 11 00 00
-usup     | 04 12 00 00
-addr     | 04 13 00 00
-dims     | 04 14 00 00
-spax     | 04 16 00 00
-spay     | 04 17 00 00
 ```
 
 ### Component Data Memory Layout
