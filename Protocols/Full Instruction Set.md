@@ -35,7 +35,7 @@ The _Arguments_ column gives you the number of arguments the command expects or 
 | `lcd_dev`  | `T0_T1_K0_X3_X5___` | hidden | 1: `unknown_1 unknown_2 touch_offset_x touch_offset_y` (space separated list of 4 hex values) | Sonoff uses this command in its NSPanel firmware. The 4 values must be formatted as 4 character hex values without `0x` prefix. The specific command used by NSPanel, `lcd_dev fffb 0002 0000 0020` (-5 2 0 32), creates a (0, 32) pixel touch offset. It's not known what the other arguments do. |
 | `lcd_refx` | `T0_T1_K0_X3_X5_??` | hidden | 0         |                              |
 | `lhmi_cle` | `T0_T1_K0_X3_X5_??` | hidden | 0         |                              |
-| `nstr`     | `T0_T1_K0_X3_X5_??` | hidden | 3         |                              |
+| `nstr`     | `T0_T1_K0_X3_X5_??` | hidden | 3: `input_int, length, format` | Converts an integer to a number like string. Writes the result to the topmost component just like `fstr` (use f.ex. `ref x` plus `doevents` to bring the desired component to the top). `length` and `format` work exactly like the corresponding attributes of the number component. |
 | `pa_q`     | `T0_T1_K0_X3_X5_??` | hidden | 2         |                              |
 | `pa_txt`   | `T0_T1_K0_X3_X5_??` | hidden | 4         |                              |
 | `qrcode`   | `T0 T1_K0_X3_X5_NE` | hidden | 7: `x_start, y_start, size, back_color, front_color, overlay_pic_id, text`  | Draws a QR code at runtime; similar capabilities as the QR code component. |
