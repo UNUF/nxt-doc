@@ -272,7 +272,7 @@ prints "Important!! ",0 | 09 0F 08 22 49 6D 70 6F 72 74 61 6E 74 21 21 20 22 2C 
 Block length            | 07 00 00 00
 jump +23 (0x17) bytes   | 54 20 03 17 00 00 00
 Block length            | 13 00 00 00
-prints "I <3 Patrick",0 | 09 0F 08 22 49 20 3C 33 20 50 61 74 72 69 63 6B 22 2C 30
+prints "I <3 bubbles",0 | 09 0F 08 22 49 20 3C 33 20 50 61 74 72 69 63 6B 22 2C 30
 Block length            | 13 00 00 00
 prints "FREE NEXTION",0 | 09 0F 08 22 46 52 45 45 20 4E 45 58 54 49 4F 4E 22 2C 30
 ```
