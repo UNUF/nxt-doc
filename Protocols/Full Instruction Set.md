@@ -30,6 +30,7 @@ The _Arguments_ column gives you the number of arguments the command expects or 
 | `draw3d`   | `T0 T1_K0_X3_X5_NE` | hidden | 7: `x_start, y_start, width, height, color_top_left, color_bottom_right, border_width` | Generates a two-color rectangle (as the border of the integrated 3D button graphics). |
 | `fstr`     | `T0_T1_K0_______NE` | hidden | 3: `input_int, digits_before_point, digits_after_point` | Converts an integer to an XFloat like string (see official XFloat component documentation for details). Writes the result to the topmost component (use f.ex. `ref x` plus `doevents` to bring the desired component to the top). |
 | `getpassw` | `T0_T1_K0_X3_X5_??` | hidden | 0         |                              |
+| `getv`     | `___T1__________??` | hidden | 1         |                              |
 | `i`        | `T0_T1_K0_X3_X5_NE` | hidden | 4 `op_a,op_b,comp,offset` | "Inline" version of the `if` instruction. Note: just like the `if`, `while` and `for` instructions (which are based on this command), it does not work when sent over serial. Explained in the TFT file format documentation (and since `i` is such a beautiful name, it's called "cjmp, conditional jump" there): [TFT File Format](/File%20Formats/TFT.md#conditional-jump-operator-cjmp) |
 | `init`     | `T0_T1_K0_X3_X5_??` | hidden | 1         |                              |
 | `lcd_dev`  | `T0_T1_K0_X3_X5___` | hidden | 1: `unknown_1 unknown_2 touch_offset_x touch_offset_y` (space separated list of 4 hex values) | Sonoff uses this command in its NSPanel firmware. The 4 values must be formatted as 4 character hex values without `0x` prefix. The specific command used by NSPanel, `lcd_dev fffb 0002 0000 0020` (-5 2 0 32), creates a (0, 32) pixel touch offset. It's not known what the other arguments do. |
@@ -47,69 +48,69 @@ The _Arguments_ column gives you the number of arguments the command expects or 
 | `timerset` | `T0_T1_K0_X3_X5_??` | hidden | 4         |                              |
 | `wfpt`     | `T0_T1____X3_X5_??` | hidden | 3         |                              |
 | `whmi_cle` | `T0_T1_K0_X3_X5_??` | hidden | 2         |                              |
-| `zstr`     | `T0_T1_K0_X3_X5_??` | hidden | 5         |                              |
-| `addt`     | `T0_T1_K0_X3_X5_NE` |        | 3         |                              |
-| `btlen`    | `T0_T1_K0_X3_X5_NE` |        | 2         |                              |
-| `cfgpio`   | `______K0_X3_X5_??` |        | 7         |                              |
-| `cir`      | `T0_T1_K0_X3_X5_NE` |        | 3         |                              |
-| `cirs`     | `T0_T1_K0_X3_X5_NE` |        | 4         |                              |
-| `cle`      | `T0_T1_K0_X3_X5_NE` |        | 2         |                              |
-| `click`    | `T0_T1_K0_X3_X5_NE` |        | 2         |                              |
-| `cls`      | `T0_T1_K0_X3_X5_NE` |        | 1         |                              |
-| `code_c`   | `T0_T1_K0_X3_X5_NE` |        | 0         |                              |
-| `com_star` | `T0_T1_K0_X3_X5_NE` |        | 0         |                              |
-| `com_stop` | `T0_T1_K0_X3_X5_NE` |        | 3         |                              |
-| `comok`    | `T0_T1_K0_X3_X5_NE` |        | 4         |                              |
-| `cov`      | `T0_T1_K0_X3_X5_NE` |        | 1         |                              |
-| `covx`     | `T0_T1_K0_X3_X5_NE` |        | 2         |                              |
-| `crcputh`  | `T0_T1_K0_X3_X5_NE` |        | 2         |                              |
-| `crcputs`  | `T0_T1_K0_X3_X5_NE` |        | 2         |                              |
-| `crcputu`  | `T0_T1_K0_X3_X5_NE` |        | 0         |                              |
-| `crcrest`  | `T0_T1_K0_X3_X5_NE` |        | 5         |                              |
-| `deldir`   | `_________X3_X5_??` |        | 2         |                              |
-| `delfile`  | `_________X3_X5_??` |        | 1         |                              |
-| `doevents` | `T0_T1_K0_X3_X5_NE` |        | 2         |                              |
-| `draw`     | `T0_T1_K0_X3_X5_NE` |        | 2         |                              |
-| `fill`     | `T0_T1_K0_X3_X5_NE` |        | 1         |                              |
-| `finddir`  | `_________X3_X5_??` |        | 5         |                              |
-| `findfile` | `_________X3_X5_??` |        | 2         |                              |
-| `get`      | `T0_T1_K0_X3_X5_NE` |        | 7         |                              |
-| `line`     | `T0_T1_K0_X3_X5_NE` |        | 1         |                              |
-| `move`     | `_________X3_X5_NE` |        | 5         |                              |
-| `newdir`   | `_________X3_X5_??` |        | 4         |                              |
-| `newfile`  | `_________X3_X5_??` |        | 4         |                              |
-| `page`     | `T0_T1_K0_X3_X5_NE` |        | 2         |                              |
-| `pic`      | `T0_T1_K0_X3_X5_NE` |        | 1         |                              |
-| `picq`     | `T0_T1_K0_X3_X5_NE` |        | 3         |                              |
-| `play`     | `_________X3_X5_??` |        | 4         |                              |
-| `print`    | `T0_T1_K0_X3_X5_NE` |        | 5         |                              |
-| `printh`   | `T0_T1_K0_X3_X5_NE` |        | 3         |                              |
-| `prints`   | `T0_T1_K0_X3_X5_NE` |        | 1         |                              |
-| `randset`  | `T0_T1_K0_X3_X5_NE` |        | 1         |                              |
-| `rdfile`   | `_________X3_X5_NE` |        | 1         |                              |
-| `redir`    | `_________X3_X5_NE` |        | 0         |                              |
-| `ref`      | `T0_T1_K0_X3_X5_NE` |        | 2         |                              |
-| `ref_star` | `T0_T1_K0_X3_X5_NE` |        | 2         |                              |
-| `ref_stop` | `T0_T1_K0_X3_X5_NE` |        | 1         |                              |
-| `refile`   | `_________X3_X5_NE` |        | 0         |                              |
-| `repo`     | `______K0_X3_X5_??` |        | 0         |                              |
-| `rept`     | `______K0_X3_X5_??` |        | 0         |                              |
-| `rest`     | `T0_T1____X3_X5_NE` |        | 2         |                              |
-| `sendme`   | `T0_T1_K0_X3_X5_NE` |        | 2         |                              |
-| `setlayer` | `_________X3_X5_??` |        | 2         |                              |
-| `spstr`    | `T0_T1_K0_X3_X5_NE` |        | 0         |                              |
-| `strlen`   | `T0_T1_K0_X3_X5_NE` |        | 2         |                              |
-| `substr`   | `T0_T1_K0_X3_X5_NE` |        | 4         |                              |
-| `touch_j`  | `T0_T1_K0_X3_X5___` |        | 0         |                              |
-| `tsw`      | `T0_T1_K0_X3_X5_NE` |        | 2         |                              |
-| `twfile`   | `_________X3_X5_??` |        | 2         |                              |
-| `ucopy`    | `T0_T1_K0_X3_X5_NE` |        | 1         |                              |
-| `udelete`  | `T0_T1_K0_X3_X5_NE` |        | 2         |                              |
-| `vis`      | `T0_T1_K0_X3_X5_NE` |        | 2         |                              |
-| `wepo`     | `______K0_X3_X5_??` |        | 2         |                              |
-| `wept`     | `______K0_X3_X5_??` |        | 4         |                              |
-| `xpic`     | `T0_T1_K0_X3_X5_NE` |        | 7         |                              |
-| `xstr`     | `T0_T1_K0_X3_X5_NE` |        | 11        |                              |
+| `zstr`     | `T0_T1_K0_X3_X5_??` | hidden | 5 `unknown_1, unknown_2, unknown_3, unknown_4, txt` | Sets the text of the topmost component to `txt`. `unknown_1` through `4` must be set to `32767` otherwise the components text simply vanishes. The scrolling text component uses different (unknown) values but all other components use `32767`  and set/update their text with this. |
+| `addt`     | `T0_T1_K0_X3_X5_NE` |        | 3        |                              |
+| `btlen`    | `T0_T1_K0_X3_X5_NE` |        | 2        |                              |
+| `cfgpio`   | `______K0_X3_X5_??` |        | 3        |                              |
+| `cir`      | `T0_T1_K0_X3_X5_NE` |        | 4        |                              |
+| `cirs`     | `T0_T1_K0_X3_X5_NE` |        | 4        |                              |
+| `cle`      | `T0_T1_K0_X3_X5_NE` |        | 2        |                              |
+| `click`    | `T0_T1_K0_X3_X5_NE` |        | 2        |                              |
+| `cls`      | `T0_T1_K0_X3_X5_NE` |        | 1        |                              |
+| `code_c`   | `T0_T1_K0_X3_X5_NE` |        | 0        |                              |
+| `com_star` | `T0_T1_K0_X3_X5_NE` |        | 0        |                              |
+| `com_stop` | `T0_T1_K0_X3_X5_NE` |        | 0        |                              |
+| `comok`    | `T0_T1_K0_X3_X5_NE` |        | 7        |                              |
+| `cov`      | `T0_T1_K0_X3_X5_NE` |        | 3        |                              |
+| `covx`     | `T0_T1_K0_X3_X5_NE` |        | 4        |                              |
+| `crcputh`  | `T0_T1_K0_X3_X5_NE` |        | 1        |                              |
+| `crcputs`  | `T0_T1_K0_X3_X5_NE` |        | 2        |                              |
+| `crcputu`  | `T0_T1_K0_X3_X5_NE` |        | 2        |                              |
+| `crcrest`  | `T0_T1_K0_X3_X5_NE` |        | 2        |                              |
+| `deldir`   | `_________X3_X5_??` |        | 1        |                              |
+| `delfile`  | `_________X3_X5_??` |        | 1        |                              |
+| `doevents` | `T0_T1_K0_X3_X5_NE` |        | 0        |                              |
+| `draw`     | `T0_T1_K0_X3_X5_NE` |        | 5        |                              |
+| `fill`     | `T0_T1_K0_X3_X5_NE` |        | 5        |                              |
+| `finddir`  | `_________X3_X5_??` |        | 2        |                              |
+| `findfile` | `_________X3_X5_??` |        | 2        |                              |
+| `get`      | `T0_T1_K0_X3_X5_NE` |        | 1        |                              |
+| `line`     | `T0_T1_K0_X3_X5_NE` |        | 5        |                              |
+| `move`     | `_________X3_X5_NE` |        | 7        |                              |
+| `newdir`   | `_________X3_X5_??` |        | 1        |                              |
+| `newfile`  | `_________X3_X5_??` |        | 2        |                              |
+| `page`     | `T0_T1_K0_X3_X5_NE` |        | 1        |                              |
+| `pic`      | `T0_T1_K0_X3_X5_NE` |        | 3        |                              |
+| `picq`     | `T0_T1_K0_X3_X5_NE` |        | 5        |                              |
+| `play`     | `_________X3_X5_??` |        | 3        |                              |
+| `print`    | `T0_T1_K0_X3_X5_NE` |        | 1        |                              |
+| `printh`   | `T0_T1_K0_X3_X5_NE` |        | 1        |                              |
+| `prints`   | `T0_T1_K0_X3_X5_NE` |        | 2        |                              |
+| `randset`  | `T0_T1_K0_X3_X5_NE` |        | 2        |                              |
+| `rdfile`   | `_________X3_X5_NE` |        | 4        |                              |
+| `redir`    | `_________X3_X5_NE` |        | 2        |                              |
+| `ref`      | `T0_T1_K0_X3_X5_NE` |        | 1        |                              |
+| `ref_star` | `T0_T1_K0_X3_X5_NE` |        | 0        |                              |
+| `ref_stop` | `T0_T1_K0_X3_X5_NE` |        | 0        |                              |
+| `refile`   | `_________X3_X5_NE` |        | 2        |                              |
+| `repo`     | `______K0_X3_X5_??` |        | 2        |                              |
+| `rept`     | `______K0_X3_X5_??` |        | 2        |                              |
+| `rest`     | `T0_T1____X3_X5_NE` |        | 0        |                              |
+| `sendme`   | `T0_T1_K0_X3_X5_NE` |        | 0        |                              |
+| `setlayer` | `_________X3_X5_??` |        | 2        |                              |
+| `spstr`    | `T0_T1_K0_X3_X5_NE` |        | 4        |                              |
+| `strlen`   | `T0_T1_K0_X3_X5_NE` |        | 2        |                              |
+| `substr`   | `T0_T1_K0_X3_X5_NE` |        | 4        |                              |
+| `touch_j`  | `T0_T1_K0_X3_X5___` |        | 0        |                              |
+| `tsw`      | `T0_T1_K0_X3_X5_NE` |        | 2        |                              |
+| `twfile`   | `_________X3_X5_??` |        | 2        |                              |
+| `ucopy`    | `T0_T1_K0_X3_X5_NE` |        | 4        |                              |
+| `udelete`  | `T0_T1_K0_X3_X5_NE` |        | 1        |                              |
+| `vis`      | `T0_T1_K0_X3_X5_NE` |        | 2        |                              |
+| `wepo`     | `______K0_X3_X5_??` |        | 2        |                              |
+| `wept`     | `______K0_X3_X5_??` |        | 2        |                              |
+| `xpic`     | `T0_T1_K0_X3_X5_NE` |        | 7        |                              |
+| `xstr`     | `T0_T1_K0_X3_X5_NE` |        | 11       |                              |
 
 ## Variables List
 
