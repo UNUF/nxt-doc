@@ -39,6 +39,7 @@ The _Arguments_ column gives you the number of arguments the command expects or 
 | `nstr`     | `T0_T1_K0_X3_X5_NE` | hidden | 3: `input_int, length, format` | Converts an integer to a number like string. Writes the result to the topmost component just like `fstr` (use f.ex. `ref x` plus `doevents` to bring the desired component to the top). `length` and `format` work exactly like the corresponding attributes of the number component. |
 | `pa_q`     | `T0_T1_K0_X3_X5_??` | hidden | 2         |                              |
 | `pa_txt`   | `T0_T1_K0_X3_X5_??` | hidden | 4         |                              |
+| `piccolor` | `___T1__________??` | hidden | 4         |                              |
 | `qrcode`   | `T0 T1_K0_X3_X5_NE` | hidden | 7: `x_start, y_start, size, back_color, front_color, overlay_pic_id, text`  | Draws a QR code at runtime; similar capabilities as the QR code component. |
 | `rfpt`     | `T0_T1____X3_X5_??` | hidden | 3         |                              |
 | `setbaudz` | `T0_T1_K0_X3_X5_??` | hidden | 1         |                              |
